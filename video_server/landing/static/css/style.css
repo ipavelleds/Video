@@ -1,0 +1,274 @@
+@font-face{
+    font-family: PFAgoraSansPro;
+    src: url(../fonts/pfagorasanspro-regular.ttf);
+   }
+
+* {padding: 0; margin: 0;}
+
+.clearfix {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+h1{
+    padding: 50px 0;   
+}
+
+header, section, footer{
+    width: 100%;   
+    text-align: center; 
+}
+
+.header-in, .section-in, .footer-in{
+    width: 1000px;   
+    margin: auto;
+}
+
+header, footer{
+    background-color: #21acd9;  
+    color: white;
+}
+
+.header-in{
+    padding: 20px 0 50px;
+}
+
+.header-in .camera h1, .header-in .camera .img-camera{
+    float: left;   
+}
+
+.header-in .camera .img-camera{
+    width: 34%;   
+    text-align: center;
+}
+
+.header-in .camera h1{
+    position: relative;
+    padding: 0;
+    top: 100px;
+    font-weight: 300;
+    width: 33%
+}
+
+.header-in .contacts{
+    padding: 20px 0;
+    font: 400 24px PFAgoraSansPro;
+    color: #ffffff;  
+}
+
+.header-in .contacts a{
+    color: #ffffff; 
+    text-decoration: none;   
+}
+
+.places{
+    width: 930px;  
+    margin: auto;
+}
+
+.place{
+    position: relative;
+    width: 290px;
+    height: 290px;
+    float: left;
+    margin: 10px;
+}
+
+.place.child{
+    background-color: #f9ed89;   
+}
+
+.place.work{
+    background-color: #96d9f5;
+}
+
+.place.home{
+    background-color: #a5ecde;
+}
+
+.place .image-wrapper{
+    line-height: 290px;
+    text-align: center;
+}
+
+.place .place-img{
+    vertical-align: middle;
+}
+
+.place .info{
+    width: 50%;
+    height: 100%;
+    float: left;
+    background-color: #2e2d40;
+    display: none;
+    font-family: PFAgoraSansPro;
+}
+
+.place .info p{
+    text-align: left;
+    padding-left: 10px;
+}
+
+.place .info h1{
+    color: #cd5f69;
+    font-size: 18px;
+}
+
+.place .info p{
+    color: #ffffff;   
+    font-size: 18px;
+}
+
+.place:hover .info{
+    display: block;
+}
+
+.place:hover .image-wrapper{
+    width: 50%;
+    float: left;
+}
+
+.place:hover .image-wrapper .place-img{
+    width: 112px;
+    height: 112px;
+}
+
+.devices{
+    position: relative;   
+    text-align: center;
+    z-index: 1;
+}
+
+.device.ipad{
+    top: 50%;
+    left: 25%;
+    position: absolute;
+}
+
+.device.iphone{
+    top: 78%;
+    left: 23%;
+    position: absolute;
+}
+
+.device.macbook{
+    position: absolute;
+    top: 60%;
+    left: 55%;
+}
+
+.line{
+    position: relative;
+    top: -30px;
+    width: 100%;
+    height: 123px;
+    background-color: #de9962;
+}
+
+.submit-bt{
+    border: 3px solid #ffe400;
+    background-color: #21acd9;
+    color: white;
+    outline: none;
+    cursor: pointer;
+}
+
+.submit-bt.big-bt{
+    width: 320px;
+    height: 60px;
+    font: 300 30px PFAgoraSansPro;
+}
+
+.submit-bt.small-bt{
+    width: 180px;
+    height: 40px;
+    font: 300 20px PFAgoraSansPro;
+}
+
+.submit-bt:hover{
+    background-color: #1fa2cd;
+}
+
+.submit-bt:active{
+    background-color: #1f94bb;
+}
+
+.footer-in{
+    padding-bottom: 50px;      
+}
+
+.popup{
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    position:fixed;
+    top:0;
+    left: 0;
+    z-index: 999;
+    text-align: center;
+}
+
+.popup-in{
+    position: relative;
+    margin:40px auto 0px auto;
+    width: 400px;
+    background-color: #21acd9;
+}
+
+.popup h1{
+    padding: 30px 0 5px;
+    color: #ffffff;
+    font: 300 35px PFAgoraSansPro;
+}
+
+.popup #close{
+    text-align: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+.popup #close img{
+    width: 34px;
+}
+
+.popup .input-icon{
+    float: left;
+    height: 28px;
+    width: 28px;
+    padding: 0 10px;
+}
+
+.popup .popup-input{
+    height: 16px;
+    width: 300px;
+    outline: none;
+    border: 2px solid #fff;
+    padding: 4px;
+    font-family: PFAgoraSansPro;
+    background-color: #ffffff;
+}
+
+.popup .popup-input:focus{
+    border: 2px solid #ffe400;
+}
+
+.popup .popup-one-input-line{
+    padding: 10px 0;
+    text-align: left;
+}
+
+.popup .submit-bt{
+    margin: 20px 0;
+}
+
+.popup .error-input{
+    color: #ffffff;
+    font-family: PFAgoraSansPro;
+}

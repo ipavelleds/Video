@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css">
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.inputmask.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/script.js"></script>
+    <title></title>
+</head>
+<body>
+    <header>
+        <div class="header-in">
+            <div class="camera">
+                <h1 style="text-align:right"><b>Наблюдайте</b><br>за любым объектом</h1>
+                <div class="img-camera">
+                    <img src="{{ STATIC_URL }}img/camera.png" alt="">
+                </div>
+                <h1 style="text-align:left"><b>с любой точки</b><br>земного шара</h1>
+                <div class="clearfix"></div>
+            </div>
+            <div class="contacts">
+                <p><a href="www.nabludenie.com">www.nabludenie.com</a></p>
+                <p>207-123</p>
+            </div>
+            <input type="submit" class="submit-bt big-bt open-popup" value="ОСТАВИТЬ ЗАЯВКУ">
+        </div>
+    </header>
+    
+    <section>
+        <div class="section-in">
+            <h1>
+            Вы сможете следить за кем и за чем угодно
+            </h1>
+            <div class="places">
+                <div class="place child">
+                    <div class="info">
+                        <h1>за ребенком</h1>
+                        <div class="info-list">
+                            <p>-в детском саду</p>
+                            <p>-в школе</p>
+                            <p>-во дворе</p>
+                            <p>-дома</p>
+                        </div>
+                    </div>
+                    <div class="image-wrapper">
+                        <img src="{{ STATIC_URL }}img/child.png" alt="" class="place-img">
+                    </div>
+                </div>
+                <div class="place work">
+                    <div class="info">
+                        <h1>за бизнесом</h1>
+                        <div class="info-list">
+                            <p>-за персоналом</p>
+                            <p>-за товаром</p>
+                            <p>-за работой</p>
+                        </div>
+                    </div>
+                    <div class="image-wrapper">
+                        <img src="{{ STATIC_URL }}img/work.png" alt="" class="place-img">
+                    </div>
+                </div>
+                <div class="place home">
+                    <div class="info">
+                        <h1>за территорией</h1>
+                        <div class="info-list">
+                            <p>-за парковкой</p>
+                            <p>-за порядком</p>
+                            <p>-за домом</p>
+                        </div>
+                    </div>
+                    <div class="image-wrapper">
+                        <img src="{{ STATIC_URL }}img/home.png" alt="" class="place-img">
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <h1>с чего угодно</h1>
+            <div class="devices">
+                <div class="device imac"><img src="{{ STATIC_URL }}img/imac.png" alt="" class="img-device"></div>
+                <div class="device ipad"><img src="{{ STATIC_URL }}img/ipad.png" alt="" class="img-device"></div>
+                <div class="device iphone"><img src="{{ STATIC_URL }}img/iphone.png" alt="" class="img-device"></div>
+                <div class="device macbook"><img src="{{ STATIC_URL }}img/macbook retina.png" alt="" class="img-device"></div>
+            </div>
+        </div>
+    </section>
+    <div class="line"></div>
+    <footer>
+        <div class="footer-in">
+            <h1>Ваша безопасность в HD качестве со звуком</h1>
+            <input type="submit" class="submit-bt big-bt open-popup" value="ОСТАВИТЬ ЗАЯВКУ">
+        </div>
+    </footer>
+
+    <div class="popup">
+        <div class="popup-in">
+            <h1>Оформление заявки</h1>
+            <div id="close">
+                <img src="{{ STATIC_URL }}img/close.png" alt=""/>
+            </div>
+             <form class="request" action="send-request" method="POST"> {% csrf_token %}
+                <div class="popup-one-input-line">
+                    <img class="input-icon" src="{{ STATIC_URL }}img/user.png" alt=""/>
+                    <input class="popup-input" type="text" placeholder="Ваше имя" name="name" value="{{ old_post.name }}"/>
+                    <div class="clearfix"></div>
+                </div>
+                <p class="error-input">{{ errors.name }}</p>
+                <div class="popup-one-input-line">
+                    <img class="input-icon" src="{{ STATIC_URL }}img/email.png" alt=""/>
+                    <input class="popup-input" type="text" placeholder="Ваша почта" name="email" value="{{ old_post.email }}"/>
+                    <div class="clearfix"></div>
+                </div>
+                <p class="error-input">{{ errors.email }}</p>
+                <div class="popup-one-input-line">
+                    <img class="input-icon" src="{{ STATIC_URL }}img/phone.png" alt=""/>
+                    <input class="popup-input" id="phone" type="text" placeholder="Ваш телефон" name="phone" value="{{ old_post.phone }}"/>
+                <div class="clearfix"></div>
+                </div>
+                <p class="error-input">{{ errors.phone }}</p>
+                <input type="submit" value="Отправить" class="submit-bt small-bt"/>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
