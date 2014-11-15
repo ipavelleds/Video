@@ -1,4 +1,10 @@
 $(document).ready(function(){
+
+
+    if(document.location.href.indexOf("send-request",0) != -1){
+        $(".popup").css("display","block");
+    }
+
     $(function(){
         $('#phone').each(function(){
             $(this).inputmask("9 (999) 999-99-99");
@@ -42,9 +48,9 @@ $(document).ready(function(){
 
     $(".open-popup").click(function(){
         $(".popup").css("display","block");
-    })
+    });
 
     $("#close").click(function(){
         $(".popup").css("display","none");
-    })
+    });
 });

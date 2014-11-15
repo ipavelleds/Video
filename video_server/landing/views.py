@@ -1,6 +1,7 @@
 #coding: utf-8
 
 from django.shortcuts import render, redirect
+from models import Request
 
 
 def validate_email(email):
@@ -31,4 +32,5 @@ def send_request(request):
         errors['phone'] = 'Введите ваш телефон'
     if errors:
         return render(request, 'index.html', {"old_post": old_post, "errors": errors})
+    Request(name=old_post['name'], phone=old_post['phone'], email=old_post['email']).save()
     return redirect('/')
