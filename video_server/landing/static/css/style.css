@@ -61,9 +61,9 @@ header, footer{
     color: #ffffff;  
 }
 
-.header-in .contacts a{
-    color: #ffffff; 
-    text-decoration: none;   
+.header-in .contacts .phone{
+    margin-top: 5px;
+    font-size: 30px;
 }
 
 .places{
