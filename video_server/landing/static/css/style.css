@@ -3,7 +3,7 @@
     src: url(../fonts/pfagorasanspro-regular.ttf);
    }
 
-* {padding: 0; margin: 0;}
+* {padding: 0; margin: 0; font-family: PFAgoraSansPro;}
 
 .clearfix {
     visibility: hidden;
@@ -56,7 +56,7 @@ header, footer{
 
 .header-in .contacts{
     padding: 20px 0;
-    font: 400 24px PFAgoraSansPro;
+    font: 400 24px;
     color: #ffffff;  
 }
 
@@ -105,7 +105,6 @@ header, footer{
     float: left;
     background-color: #2e2d40;
     display: none;
-    font-family: PFAgoraSansPro;
 }
 
 .place .info p{
@@ -180,13 +179,15 @@ header, footer{
 .submit-bt.big-bt{
     width: 320px;
     height: 60px;
-    font: 300 30px PFAgoraSansPro;
+    font-size: 30px;
+    font-weight: 300;
 }
 
 .submit-bt.small-bt{
     width: 180px;
     height: 40px;
-    font: 300 20px PFAgoraSansPro;
+    font-size: 20px;
+    font-weight: 300;
 }
 
 .submit-bt:hover{
@@ -223,7 +224,8 @@ header, footer{
 .popup h1{
     padding: 30px 0 5px;
     color: #ffffff;
-    font: 300 35px PFAgoraSansPro;
+    font-size: 35px;
+    font-weight: 300;
 }
 
 .popup #close{
@@ -251,7 +253,6 @@ header, footer{
     outline: none;
     border: 2px solid #fff;
     padding: 4px;
-    font-family: PFAgoraSansPro;
     background-color: #ffffff;
 }
 
@@ -270,5 +271,4 @@ header, footer{
 
 .popup .error-input{
     color: #ffffff;
-    font-family: PFAgoraSansPro;
 }
