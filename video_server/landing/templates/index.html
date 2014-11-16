@@ -2,10 +2,12 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/component.css">
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css">
     <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-2.1.0.min.js"></script>
     <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.inputmask.js"></script>
     <script type="text/javascript" src="{{ STATIC_URL }}js/script.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/modernizr.custom.js"></script>
     <title></title>
 </head>
 <body>
@@ -33,47 +35,66 @@
             Вы сможете следить за кем и за чем угодно
             </h1>
             <div class="places">
-                <div class="place child">
-                    <div class="info">
-                        <h1>за ребенком</h1>
-                        <div class="info-list">
-                            <p>-в детском саду</p>
-                            <p>-в школе</p>
-                            <p>-во дворе</p>
-                            <p>-дома</p>
-                        </div>
-                    </div>
-                    <div class="image-wrapper">
-                        <img src="{{ STATIC_URL }}img/child.png" alt="" class="place-img">
-                    </div>
-                </div>
-                <div class="place work">
-                    <div class="info">
-                        <h1>за бизнесом</h1>
-                        <div class="info-list">
-                            <p>-за персоналом</p>
-                            <p>-за товаром</p>
-                            <p>-за работой</p>
-                        </div>
-                    </div>
-                    <div class="image-wrapper">
-                        <img src="{{ STATIC_URL }}img/work.png" alt="" class="place-img">
-                    </div>
-                </div>
-                <div class="place home">
-                    <div class="info">
-                        <h1>за территорией</h1>
-                        <div class="info-list">
-                            <p>-за парковкой</p>
-                            <p>-за порядком</p>
-                            <p>-за домом</p>
-                        </div>
-                    </div>
-                    <div class="image-wrapper">
-                        <img src="{{ STATIC_URL }}img/home.png" alt="" class="place-img">
-                    </div>
-                </div>
-                <div class="clearfix"></div>
+                <ul class="grid cs-style-4">
+                    <li>
+                        <figure>
+                            <div class="place child">
+                                <div class="image-wrapper">
+                                    <img src="{{ STATIC_URL }}img/child.png" alt="" class="place-img">
+                                </div>
+                            </div>
+                            <figcaption>
+                                <div class="info">
+                                    <h1>за ребенком</h1>
+                                    <div class="info-list">
+                                        <p>-в детском саду</p>
+                                        <p>-в школе</p>
+                                        <p>-во дворе</p>
+                                        <p>-дома</p>
+                                    </div>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <div class="place work">
+                                <div class="image-wrapper">
+                                    <img src="{{ STATIC_URL }}img/work.png" alt="" class="place-img">
+                                </div>
+                            </div>
+                            <figcaption>
+                                <div class="info">
+                                    <h1>за бизнесом</h1>
+                                    <div class="info-list">
+                                        <p>-за персоналом</p>
+                                        <p>-за товаром</p>
+                                        <p>-за работой</p>
+                                    </div>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <div class="place home">
+                                <div class="image-wrapper">
+                                    <img src="{{ STATIC_URL }}img/home.png" alt="" class="place-img">
+                                </div>
+                            </div>
+                            <figcaption>
+                                <div class="info">
+                                    <h1>за территорией</h1>
+                                    <div class="info-list">
+                                        <p>-за парковкой</p>
+                                        <p>-за порядком</p>
+                                        <p>-за домом</p>
+                                    </div>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </li>
+                </ul>
             </div>
             <h1>с чего угодно</h1>
             <div class="devices">

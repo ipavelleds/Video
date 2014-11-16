@@ -56,7 +56,8 @@ header, footer{
 
 .header-in .contacts{
     padding: 20px 0;
-    font: 400 24px;
+    font-size: 24px;
+    font-weight: 400;
     color: #ffffff;  
 }
 
@@ -74,8 +75,7 @@ header, footer{
     position: relative;
     width: 290px;
     height: 290px;
-    float: left;
-    margin: 10px;
+    text-align: center;
 }
 
 .place.child{
@@ -92,49 +92,25 @@ header, footer{
 
 .place .image-wrapper{
     line-height: 290px;
-    text-align: center;
 }
 
 .place .place-img{
     vertical-align: middle;
+    display: inline;
 }
 
-.place .info{
-    width: 50%;
-    height: 100%;
-    float: left;
-    background-color: #2e2d40;
-    display: none;
-}
-
-.place .info p{
+figcaption .info p{
     text-align: left;
     padding-left: 10px;
+    color: #ffffff;
+    font-size: 18px;
 }
 
-.place .info h1{
+figcaption .info h1{
     color: #cd5f69;
     font-size: 18px;
 }
 
-.place .info p{
-    color: #ffffff;   
-    font-size: 18px;
-}
-
-.place:hover .info{
-    display: block;
-}
-
-.place:hover .image-wrapper{
-    width: 50%;
-    float: left;
-}
-
-.place:hover .image-wrapper .place-img{
-    width: 112px;
-    height: 112px;
-}
 
 .devices{
     position: relative;   
@@ -174,6 +150,7 @@ header, footer{
     color: white;
     outline: none;
     cursor: pointer;
+    transition: all 0.4s ease;
 }
 
 .submit-bt.big-bt{
@@ -184,18 +161,20 @@ header, footer{
 }
 
 .submit-bt.small-bt{
-    width: 180px;
+    width: 160px;
     height: 40px;
     font-size: 20px;
     font-weight: 300;
 }
 
 .submit-bt:hover{
-    background-color: #1fa2cd;
+    color: black;
+    background-color: #ffe400;
+    transform: scale(1.2);
 }
 
 .submit-bt:active{
-    background-color: #1f94bb;
+    background-color: #e3cb00;
 }
 
 .footer-in{
@@ -217,12 +196,12 @@ header, footer{
 .popup-in{
     position: relative;
     margin:40px auto 0px auto;
-    width: 400px;
+    width: 500px;
     background-color: #21acd9;
 }
 
 .popup h1{
-    padding: 30px 0 5px;
+    padding: 30px 0 15px;
     color: #ffffff;
     font-size: 35px;
     font-weight: 300;
@@ -248,7 +227,7 @@ header, footer{
 }
 
 .popup .popup-input{
-    height: 16px;
+    height: 24px;
     width: 300px;
     outline: none;
     border: 2px solid #fff;
@@ -261,14 +240,46 @@ header, footer{
 }
 
 .popup .popup-one-input-line{
-    padding: 10px 0;
+    width: 405px;
+    margin: auto;
+    padding: 14px 0;
     text-align: left;
 }
 
 .popup .submit-bt{
-    margin: 20px 0;
+    margin: 20px 0 30px;
 }
 
 .popup .error-input{
     color: #ffffff;
+}
+
+.grid li {
+    width: 290px;
+    padding: 5px;
+}
+
+.grid figcaption {
+    padding: 0 5px;
+}
+
+.grid figcaption h1{
+    text-align: center;
+}
+
+.cs-style-4 figure .place {
+    transition: transform 0.4s;
+}
+
+.no-touch .cs-style-4 figure:hover .place img,
+.cs-style-4 figure.cs-hover .place img {
+    transform: scale(0.8) translateX(70%);
+}
+
+.grid {
+    max-width: 100%;
+    padding: 0;
+    margin: 0 auto;
+    list-style: none;
+    text-align: center;
 }
