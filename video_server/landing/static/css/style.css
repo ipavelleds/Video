@@ -3,7 +3,7 @@
     src: url(../fonts/pfagorasanspro-regular.ttf);
    }
 
-* {padding: 0; margin: 0; font-family: PFAgoraSansPro;}
+* {padding: 0; margin: 0; font-family: PFAgoraSansPro, arial, sans-serif;}
 
 .clearfix {
     visibility: hidden;
@@ -15,6 +15,7 @@
 }
 
 h1{
+    font-weight: lighter;
     padding: 50px 0;   
 }
 
@@ -33,6 +34,10 @@ header, footer{
     color: white;
 }
 
+section{
+    color: #232323;
+}
+
 .header-in{
     padding: 20px 0 50px;
 }
@@ -47,6 +52,7 @@ header, footer{
 }
 
 .header-in .camera h1{
+    color: #ffffff;
     position: relative;
     padding: 0;
     top: 100px;
@@ -168,7 +174,7 @@ figcaption .info h1{
 }
 
 .submit-bt:hover{
-    color: black;
+    color: #232323;
     background-color: #ffe400;
     transform: scale(1.2);
 }
@@ -220,10 +226,9 @@ figcaption .info h1{
 }
 
 .popup .input-icon{
-    float: left;
-    height: 28px;
-    width: 28px;
+    width: 36px;
     padding: 0 10px;
+    vertical-align: middle;
 }
 
 .popup .popup-input{
@@ -231,7 +236,7 @@ figcaption .info h1{
     width: 300px;
     outline: none;
     border: 2px solid #fff;
-    padding: 4px;
+    padding: 4px 8px;
     background-color: #ffffff;
 }
 
@@ -242,8 +247,7 @@ figcaption .info h1{
 .popup .popup-one-input-line{
     width: 405px;
     margin: auto;
-    padding: 14px 0;
-    text-align: left;
+    padding: 14px 56px 14px 0;
 }
 
 .popup .submit-bt{
