@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'gunicorn',
     'landing',
+    'video_server'
 )
 
 MIDDLEWARE_CLASSES = (
