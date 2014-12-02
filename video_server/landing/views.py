@@ -18,6 +18,11 @@ def validate_email(email):
 
 
 def landing_render(request):
+    status = request.GET.get('status', None)
+    if status == u'success':
+        return render(request, 'index.html', {'success': "sent"})
+    elif status == u'fail':
+        return render(request, 'index.html', {'success': "noSent"})
     return render(request, 'index.html')
 
 
@@ -35,6 +40,7 @@ def send_request(request):
         errors['phone'] = 'Введите ваш телефон'
     if errors:
         return render(request, 'index.html', {"old_post": old_post, "errors": errors})
+
     Request(name=old_post['name'], phone=old_post['phone'], email=old_post['email']).save()
 
     super_users = User.objects.filter(is_superuser=True)
@@ -50,11 +56,13 @@ def send_request(request):
             if old_post['email']:
                 user_email = u'Почта клиента: ' + old_post['email'] + '\n'
             message = user_name + user_email + u'Телефон клиента: ' + old_post['phone']
-            send_mail(
+            if send_mail(
                 'Новая заявка c Наблюдай.Онлайн',
                 message,
                 settings.EMAIL_HOST_USER,
                 recipients,
                 fail_silently=False
-            )
-    return redirect('/')
+            ) > 0:
+                return redirect('/?status=success')
+            else:
+                return redirect('/?status=fail')

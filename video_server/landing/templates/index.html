@@ -28,6 +28,12 @@
                 <p class="phone">669-926</p>
             </div>
             <input type="submit" class="submit-bt big-bt open-popup" value="ОСТАВИТЬ ЗАЯВКУ">
+            {% ifequal success "sent" %}
+                <p class="success-email">Ваша заявка принята. Спасибо</p>
+            {% endifequal %}
+            {% ifequal success "noSent" %}
+                <p class="success-email">Ваша заявка не отправлена по тех. причинам. Извините за неудобство</p>
+            {% endifequal %}
         </div>
     </header>
     
