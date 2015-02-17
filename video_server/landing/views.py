@@ -2,6 +2,9 @@
 
 from django.shortcuts import render, redirect
 from models import Request
+from django.contrib.auth.models import User
+from django.conf import settings
+from django.core.mail import send_mail
 
 
 def validate_email(email):
@@ -15,6 +18,11 @@ def validate_email(email):
 
 
 def landing_render(request):
+    status = request.GET.get('status', None)
+    if status == u'success':
+        return render(request, 'index.html', {'success': "sent"})
+    elif status == u'fail':
+        return render(request, 'index.html', {'success': "noSent"})
     return render(request, 'index.html')
 
 
@@ -32,5 +40,29 @@ def send_request(request):
         errors['phone'] = 'Введите ваш телефон'
     if errors:
         return render(request, 'index.html', {"old_post": old_post, "errors": errors})
+
     Request(name=old_post['name'], phone=old_post['phone'], email=old_post['email']).save()
-    return redirect('/')
+
+    super_users = User.objects.filter(is_superuser=True)
+    recipients = [super_user.email for super_user in super_users]
+    if recipients == [u'']:
+        recipients = [settings.EMAIL_HOST_USER]
+    user_name = ""
+    user_email = ""
+    if request.method == 'POST':
+        if request.POST["phone"]:
+            if old_post['name']:
+                user_name = u'Имя клиента: ' + old_post['name'] + '\n'
+            if old_post['email']:
+                user_email = u'Почта клиента: ' + old_post['email'] + '\n'
+            message = user_name + user_email + u'Телефон клиента: ' + old_post['phone']
+            if send_mail(
+                'Новая заявка c Наблюдай.Онлайн',
+                message,
+                settings.EMAIL_HOST_USER,
+                recipients,
+                fail_silently=False
+            ) > 0:
+                return redirect('/?status=success')
+            else:
+                return redirect('/?status=fail')

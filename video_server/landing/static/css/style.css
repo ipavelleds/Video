@@ -287,3 +287,8 @@ figcaption .info h1{
     list-style: none;
     text-align: center;
 }
+
+.success-email{
+    padding-top: 30px;
+    font-size: 40px;
+}
